@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task manager</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    </head>
+    <body>
+        <header>
+            <h2>Flask Task Manager</h2>
+            <hr>
+        </header>
+        {% block content %} {% endblock %}
+
+    </body>
+</html>
+
+
+

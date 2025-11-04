@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Add New Task </h3>
+
+<form method="POST" action="/add">
+
+    <input type="text" name="title" placeholder="Enter task" required>
+    <input type="submit" value="Add Task">
+
+</form>
+
+<hr>
+<h3>Task List</h3>
+<ul>
+    {% for task in tasks %}
+        <li>{{ task.title }} 
+            <a href="/update/{{ task.id }}" class="update">Update</a>
+            <a href="/delete/{{ task.id }}" class="delete">Delete</a>
+        </li>
+    {% else %}
+        <p>No tasks yet.</p>
+    {% endfor %}
+</ul>
+{% endblock %}
