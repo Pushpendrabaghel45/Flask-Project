@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}Feedback Page{% endblock %}
+
+{% block content %}
+
+<!-- ===== Modern Header Section ===== -->
+<header style="background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+                color: white; padding: 20px 30px; border-radius: 10px;
+                display: flex; justify-content: space-between; align-items: center;">
+  
+  <div style="font-size: 1.8em; font-weight: bold;">
+    💬 Feedback Portal
+  </div>
+
+  <div>
+    <a href="#" style="background-color: white; color:#2575fc; padding:8px 16px; 
+       border-radius: 25px; text-decoration: none; font-weight:600; margin-right:10px;">
+       Dashboard
+    </a>
+    <a href="#" style="background-color: white; color:#2575fc; padding:8px 16px; 
+       border-radius: 25px; text-decoration: none; font-weight:600;">
+       Give Feedback
+    </a>
+  </div>
+</header>
+
+<hr>
+
+<!-- ===== Feedback Form Section ===== -->
+{% if not name %}
+  <h3 style="color:#333;">Submit Your Feedback</h3>
+ <form method="POST" action="/submit">
+  <label for="name">Name:</label><br>
+  <input type="text" name="name" required><br><br>
+
+  <label for="email">Email:</label><br>
+  <input type="email" name="email" id="email" required><br><br>
+
+  <label for="subject">Subject</label><br>
+  <input name="subject" type="text" id="subject" required><br><br>
+
+  <label for="message">Feedback:</label><br>
+  <textarea name="message" rows="4" cols="40" required></textarea><br><br>
+
+  <input type="submit" value="Submit">
+</form>
+  </form>
+{% endif %}
+<!-- ===== Feedback Summary ===== -->
+{% if name and message %} 
+   <hr>
+   <div class="alert alert-success" role="alert">
+  {{ res }}
+</div>
+  <h4>Feedback Summary</h4>
+  <p><strong>Name:</strong> {{ name }}</p>
+  <p><strong>Email:</strong> {{ email }}</p>
+  <p><strong>Subject:</strong> {{ subject }}</p>
+  <p><strong>Message:</strong> {{ message }}</p>
+{% endif %}
+
+<hr>
+
+<!-- ===== Footer Section ===== -->
+<footer style="background-color:#222; color:white; text-align:center; padding:15px; border-radius:10px;">
+  <p>🌟 Thank you for sharing your valuable feedback 🌟</p>
+  <p style="font-size:0.9em; color:#aaa;">© 2025 Feedback Portal | Built with ❤️ using Flask</p>
+</footer>
+
+{% endblock %}

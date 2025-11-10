@@ -1,0 +1,33 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 30px;
+}
+
+label {
+    font-weight: bold;
+}
+
+.flash {
+    background-color: #e8f5e9;
+    padding: 10px;
+    border: 1px solid #81c784;
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+.feedback {
+    background-image: url(http://127.0.0.1:5000/static/assets/images/meetings-bg.jpg);
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 140px 0px 0px 0px;
+
+    text-transform: uppercase;
+    color: #1f272b;
+    /* border-bottom: 1px solid #eee; */
+    /* margin-bottom: 40px; */
+    padding-bottom: 20px;
+    font-size: 16px;
+    font-weight: 700;
+}
