@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+        
+<form method="post">
+
+   <label for="firstname">Firstname:</label>
+   <input type="text" id="firstname"  firstname="user_firstname"/>
+
+    <label for="lasttname">Lastname:</label>
+   <input type="text" id="lastname"  laststname="user_lastname"/>
+
+    <label for="contact">Contact:</label>
+   <input type="tel" id="contact"  contact="user_contact"/>
+
+    <label for="mail">Email:</label>
+    <input type="email" id="mail" name="user_email" />
+
+    <p label for="message">Message:</label><br>
+    <textarea id="message" name="user_message" rows="4" cols="50"></textarea><br><br>
+
+<p class="button">
+    <button type="submit">Submit</button>
+</p>
+<div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+<div class="featured-block d-flex justify-content-center align-items-center">
+<a href="/succes" class="d-block">
+
+</form>
+
+</body>
+</html>
