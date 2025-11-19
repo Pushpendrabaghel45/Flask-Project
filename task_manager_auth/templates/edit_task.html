@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card mx-auto p-4" style="max-width: 500px;">
+  <h3 class="mb-3 text-center">Edit Task</h3>
+  <form method="POST">
+    <div class="mb-3">
+      <label>Title</label>
+      <input type="text" name="title" value="{{ task.title }}" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label>Description</label>
+      <input type="text" name="description" value="{{ task.description }}" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label>Status</label>
+      <select name="status" class="form-select">
+        <option value="Pending" {% if task.status == "Pending" %}selected{% endif %}>Pending</option>
+        <option value="Completed" {% if task.status == "Completed" %}selected{% endif %}>Completed</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-success w-100">Update Task</button>
+  </form>
+</div>
+{% endblock %}
